@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /gene-site/api/
+Sitemap: https://vharseko.github.io/gene-site/sitemap.xml

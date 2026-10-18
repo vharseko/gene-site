@@ -1,0 +1,178 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to use the site — Family archive</title><meta name="description" content="How the family archive works and how to add what you know.">
+<link rel="stylesheet" href="../app.css"><style>body{display:block}main.archive-page{max-width:820px;margin:auto;padding:28px 20px 64px}
+.archive-page p,.archive-page li{line-height:1.65}.archive-page h1{font-size:clamp(27px,5vw,40px)}
+.archive-page li{margin-bottom:8px}.archive-page .notice{border-left:3px solid var(--accent);padding:12px 16px;background:var(--paper)}
+.bar-static{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px}.bar-static .tabs a{padding:8px 10px}
+.bar-static .language-tools{margin-left:auto}.archive-page p{margin:0 0 14px}</style><meta name="robots" content="index, follow">
+<meta property="og:type" content="website"><meta property="og:title" content="How to use the site — Family archive"><meta property="og:description" content="How the family archive works and how to add what you know."><meta property="og:site_name" content="Family archive">
+<link rel="canonical" href="https://vharseko.github.io/gene-site/en/help.html"><meta property="og:url" content="https://vharseko.github.io/gene-site/en/help.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://vharseko.github.io/gene-site/en/help.html", "name": "How to use the site — Family archive", "description": "How the family archive works and how to add what you know.", "inLanguage": "en"}</script>
+<link rel="alternate" hreflang="ru" href="https://vharseko.github.io/gene-site/help.html"><link rel="alternate" hreflang="en" href="https://vharseko.github.io/gene-site/en/help.html"><link rel="alternate" hreflang="x-default" href="https://vharseko.github.io/gene-site/help.html"><script src="../languages.js" defer></script></head><body><header class="bar bar-static"><div class="brand"><a class="eyebrow brand-home" href="">Family archive</a></div><nav class="tabs" role="tablist"><a role="tab" class="tab" href="#/tree">Tree</a><a role="tab" class="tab" href="#/people">People</a><a role="tab" class="tab" href="#/places">Places</a><a role="tab" class="tab" href="#/sources">Archive</a></nav><div class="language-tools"><details class="more-menu language-nav"><summary aria-label="Site language">English <span aria-hidden="true">▾</span></summary><nav class="more-list" aria-label="Site language"><a data-site-lang="ru" lang="ru" hreflang="ru" href="../help.html">Русский</a><a data-site-lang="en" lang="en" hreflang="en" class="on" aria-current="true" href="../en/help.html">English</a></nav></details></div></header><main class="archive-page">
+<h1>How to use the site</h1><style>
+.help-lede { color: var(--muted); font-size: 18px; line-height: 1.6; max-width: 680px; }
+.tour { margin: 24px 0 8px; padding: 16px 20px 6px; background: var(--paper); border: 1px solid var(--line); border-radius: 14px; }
+.tour h2 { font-size: 20px; margin: 0 0 8px; }
+.tour-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 28px; margin: 0; }
+.tour-list div { display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 12px; padding: 9px 0; border-top: 1px solid var(--line); }
+.tour-list dt { font: 600 15px/1.4 var(--sans); margin: 0; }
+.tour-list dt a { color: var(--accent); text-decoration: none; }
+.tour-list dd { margin: 0; font-size: 15px; line-height: 1.5; color: var(--muted); }
+.help-toc { display: flex; flex-wrap: wrap; gap: 6px; margin: 22px 0 6px; padding: 0; list-style: none; font: 14px var(--sans); }
+.help-toc a { display: inline-block; border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; background: var(--paper); text-decoration: none; }
+.help-sec { padding: 22px 0 6px; border-top: 1px solid var(--line); scroll-margin-top: 70px; }
+.help-sec h2 { font-size: 25px; margin: 0 0 8px; }
+.help-sec h3 { font-size: 18px; margin: 20px 0 4px; }
+.help-feature { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px 8px; margin: 18px 0; }
+.help-feature .tag { display: inline-block; font: 600 11px/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.steps { list-style: none; counter-reset: s; padding: 0; }
+.steps li { counter-increment: s; position: relative; padding-left: 40px; min-height: 30px; }
+.steps li::before { content: counter(s); position: absolute; left: 0; top: 1px; width: 27px; height: 27px; border-radius: 50%; background: var(--accent); color: var(--accent-ink); font: 700 14px/27px var(--sans); text-align: center; }
+.help-note { background: var(--paper); border-left: 3px solid var(--accent); padding: 10px 14px; border-radius: 0 8px 8px 0; }
+.help-chip { display: inline-block; font: 600 13px/22px var(--sans); padding: 0 8px; border-radius: 11px; background: var(--chip); color: var(--accent); }
+kbd { font: 600 14px var(--sans); border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4px; padding: 0 5px; background: var(--paper); }
+@media (max-width: 720px) { .tour-list { grid-template-columns: 1fr; } .tour-list div { grid-template-columns: 1fr; gap: 2px; } }
+</style>
+<p class="help-lede">Everything the family knows about its ancestors is gathered here: the tree, the story, a map, documents and old photographs. Nothing can be broken, so click freely. And if you remember something, write it down — that is what the site is for.</p>
+
+<section class="tour" aria-label="Sections of the site">
+<h2>What is where</h2>
+<dl class="tour-list">
+<div><dt><a href="./#/tree">Tree</a></dt><dd>Who is related to whom and how. Click a person to open everything known about them.</dd></div>
+<div><dt><a href="./#/people">People</a></dt><dd>Everyone in the tree, a calendar of birthdays and anniversaries, surname pages.</dd></div>
+<div><dt><a href="./#/places">Places</a></dt><dd>A map of the villages and towns where the family lived, and the moves between them.</dd></div>
+<div><dt><a href="./#/sources">Archive</a></dt><dd>The documents and photographs the tree is built on, the sources searched and the corrections log.</dd></div>
+<div><dt><a href="./#/story">Story</a></dt><dd>The story of the family, if it has been written.</dd></div>
+<div><dt><a href="./#/questions">Questions and discussion</a></dt><dd>What we do not know yet — and relatives' comments.</dd></div>
+</dl>
+</section>
+
+<ul class="help-toc" aria-label="Contents">
+<li><a href="#tree">Tree</a></li>
+<li><a href="#card">A person's card</a></li>
+<li><a href="#kin">How we are related</a></li>
+<li><a href="#search">Search</a></li>
+<li><a href="#write">How to add or correct</a></li>
+<li><a href="#archive">Archive</a></li>
+<li><a href="#places">Places and the story</a></li>
+<li><a href="#signs">Signs</a></li>
+<li><a href="#share">Links and language</a></li>
+<li><a href="#phone">On a phone</a></li>
+<li><a href="#privacy">Living people</a></li>
+<li><a href="#trouble">If something does not work</a></li>
+</ul>
+
+<section class="help-sec" id="tree">
+<h2>Tree</h2>
+<p>One person stands in the middle of the tree — their card has a frame. Above are parents and ancestors, below are children, beside them brothers, sisters and spouses.</p>
+<ul>
+<li><b>Click a card</b> — everything known about the person opens on the right, and the person stays visible in the tree.</li>
+<li><b>To move to another branch,</b> open the card and press “Put in the centre of the tree”. “+3 relatives” means the person has relatives who are not shown now.</li>
+<li><b>Move</b> the tree with the mouse or a finger, <b>zoom</b> with the + and − buttons, a pinch or the mouse wheel with <kbd>Ctrl</kbd>. “Fit” shows the whole tree.</li>
+<li><b>Branches and surnames on the left:</b> click a surname and the tree shows its branch.</li>
+<li><b>“Horizontal”</b> turns the tree sideways — handy on a wide screen.</li>
+</ul>
+<p class="help-note">The whole tree on one big diagram: the “Archive” tab, the “The whole tree on one diagram” button. It can be saved as a picture.</p>
+</section>
+
+<section class="help-sec" id="card">
+<h2>A person's card</h2>
+<p>The card gathers everything known about a person: how they are related, dates and places of birth, marriage and death, where they lived, their relatives, their life story, photographs, documents and relatives' comments.</p>
+<p>Each date shows how we know it: from a document, from the family's account, from an age in another document. A number like <span class="help-chip">S12</span> is a link to a document: click it and it opens with its transcription. A relative's name takes you to their card. Close the card with the cross or the key <kbd>Esc</kbd>.</p>
+</section>
+
+<section class="help-sec" id="kin">
+<h2>How we are related</h2>
+<p>Every person's card has a “How we are related” block. It shows straight away how the person is related to the main person of the tree, and in the “Relation to” field you can choose anyone else — yourself, for example.</p>
+<p>The site names the relation exactly — “second cousin once removed”, “great-aunt”, “half-brother”, the husband or wife of a relative — and shows the chain of people between you. Every name in the chain opens a card. If one of the links is not proven by a document, the site says so: “probable”.</p>
+</section>
+
+<section class="help-sec" id="search">
+<h2>Search</h2>
+<ul>
+<li><b>The magnifier at the top:</b> start typing a name, a village or a word from a document — you get people, documents (by their transcriptions), places, chapters of the Story, leads and questions. Word endings, the pre-1918 Russian spelling and Latin or Cyrillic letters do not get in the way: “Kolodin” also finds the name written in Cyrillic.</li>
+<li><b>The “People” tab:</b> the full list with a search by name, relation and years; a “Calendar” of birthdays and anniversaries; “Surnames” — a page for every surname.</li>
+<li><b>“People index”</b> in the “More” menu — a page for every person; through it a relative can also be found by a search engine.</li>
+</ul>
+</section>
+
+<section class="help-sec help-feature" id="write">
+<span class="tag">The most important</span>
+<h2>How to add or correct</h2>
+<p>There is a lot we do not know, and you may remember it: names, dates, where people lived, what they did, who is in an old photograph. Approximate is fine too (“I think, the late fifties”): we will note that it is a memory, not a document.</p>
+<ol class="steps">
+<li>Open the card of a person or a document — from the tree, the search or the archive.</li>
+<li>Press “Add details” or scroll down to “Comments and clarifications”.</li>
+<li>Write your name so that it is clear who you are (“Aunt Anna”). The site will remember it.</li>
+<li>Write what you know and press “Send”.</li>
+</ol>
+<h3>Suggest a correction</h3>
+<p>If a date or place is wrong, press “Suggest a correction” on the card: choose what to correct and write the correct value and how you know it. The keeper of the archive will see it and put it into the tree.</p>
+<h3>Answer our questions</h3>
+<p>The “Questions and discussion” tab lists what the family does not know yet. The “Reply” button attaches your answer to the right person.</p>
+<p class="help-note">Comments and proposals work when the site runs with its server. If there are no comment fields, write to the keeper of the archive: the address is usually in the site's header.</p>
+</section>
+
+<section class="help-sec" id="archive">
+<h2>Archive</h2>
+<h3>Documents and photographs</h3>
+<p>Everything the tree is built on: registers, certificates, letters, newspapers, manuscripts and family photographs. Search by name, place, year or a word from the description; the “Type” and “Line” buttons pick, for example, only photographs or only one branch. If a photo has a back, the viewer shows a “Back” button. Below is the “Research log”: where we looked and what we found.</p>
+<h3>Restored photos</h3>
+<p>Old photographs without creases and stains — in black and white and in colour, next to the original. The colours are the restorer's guess; the original remains the document.</p>
+<h3>Sources</h3>
+<p>Every archive, database and website where we looked for the family: what the source is, what was found there, and which documents and search-log entries belong to it. For parish registers there is a year × part table: what was read through, up to which entry, what is not on the film.</p>
+<h3>Corrections log</h3>
+<p>Every change in the tree: what was recorded before, what it is now, why, and which document it rests on.</p>
+<p>The archive page offers the whole tree as a GEDCOM file — MyHeritage, Gramps, Ancestry and other genealogy programs open it.</p>
+<h3>Archive in numbers</h3>
+<p>How many people, documents and places have been gathered, where the documents come from, what confirms the people, how many open questions and corrections each family line has, births by century and the research log over time. The link is in the More menu.</p>
+</section>
+
+<section class="help-sec" id="places">
+<h2>Places and the story</h2>
+<p><b>Places</b> — where the family lived. Every place has its own page: what was there, who of the family was born, lived or is buried there (by generation), which documents tell us so, what the place was called then and is called now, in which church's books to look for the registers, and a small map. The Places page shows the roads of the family's branches: places in the order of years, with numbered stops on the branch's map. All places at once are behind the link “All places on one map”.</p>
+<p><b>Story</b> — the story of the family. Read it from beginning to end like a book, jump along the timeline, or choose a place to highlight every passage about it.</p>
+</section>
+
+<section class="help-sec" id="signs">
+<h2>Signs</h2>
+<ul>
+<li><b>A card with a frame</b> — the person in the centre of the tree.</li>
+<li><b>A dashed line and the ≈ sign</b> — a probable link: we think so, but there is no document yet.</li>
+<li><b>An empty “+ suggest” card</b> — there should be a person here whom we do not know. Click it and write if you know who it is.</li>
+<li><b>S1, S2…</b> — documents of the archive; <b>L1, L2…</b> — leads: something was found but not checked yet.</li>
+</ul>
+</section>
+
+<section class="help-sec" id="share">
+<h2>Links and language</h2>
+<ul>
+<li><b>“Share”</b> on the card of a person, a document or in the site's header copies a link. In Telegram, WhatsApp and other messengers it shows a photograph, a name and a description, and opens the same place of the site.</li>
+<li><b>The address in the browser</b> changes with what is open — it can be copied and sent too.</li>
+<li><b>The language</b> is switched in the header. Names and documents stay in the original.</li>
+<li><b>“More”:</b> “What's new”, this page, the “People index” and other pages of the site.</li>
+</ul>
+</section>
+
+<section class="help-sec" id="phone">
+<h2>On a phone</h2>
+<ul>
+<li>The tabs at the top scroll sideways — there are more of them than fit on the screen.</li>
+<li>Move the tree with one finger, zoom with a pinch.</li>
+<li>The card opens from below over the tree. Close it with the cross or by tapping the darkened part of the screen.</li>
+<li>On a phone, “Share” opens the phone's own share menu — straight into a messenger.</li>
+</ul>
+</section>
+
+<section class="help-sec" id="privacy">
+<h2>Living people</h2>
+<p>For living people the site shows only the name and the relation: no dates, places, documents or photographs — not on the pages, in the data file or in the GEDCOM export. Their pages are hidden from search engines. If you want more — or less — written about you, tell the keeper of the archive.</p>
+</section>
+
+<section class="help-sec" id="trouble">
+<h2>If something does not work</h2>
+<p>Reload the page, and if that does not help, reload it clearing the cache (on a computer <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>, on a Mac <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>). If that does not help either, write to the keeper of the archive what you clicked and what you saw; a screenshot helps most.</p>
+<p><a href="./">← Home</a></p>
+</section>
+</main></body></html>

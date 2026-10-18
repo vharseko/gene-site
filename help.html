@@ -1,0 +1,178 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Как пользоваться сайтом — Семейный архив</title><meta name="description" content="Как устроен семейный архив и как дописать в него то, что вы знаете.">
+<link rel="stylesheet" href="app.css"><style>body{display:block}main.archive-page{max-width:820px;margin:auto;padding:28px 20px 64px}
+.archive-page p,.archive-page li{line-height:1.65}.archive-page h1{font-size:clamp(27px,5vw,40px)}
+.archive-page li{margin-bottom:8px}.archive-page .notice{border-left:3px solid var(--accent);padding:12px 16px;background:var(--paper)}
+.bar-static{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px}.bar-static .tabs a{padding:8px 10px}
+.bar-static .language-tools{margin-left:auto}.archive-page p{margin:0 0 14px}</style><meta name="robots" content="index, follow">
+<meta property="og:type" content="website"><meta property="og:title" content="Как пользоваться сайтом — Семейный архив"><meta property="og:description" content="Как устроен семейный архив и как дописать в него то, что вы знаете."><meta property="og:site_name" content="Семейный архив">
+<link rel="canonical" href="https://vharseko.github.io/gene-site/help.html"><meta property="og:url" content="https://vharseko.github.io/gene-site/help.html">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "url": "https://vharseko.github.io/gene-site/help.html", "name": "Как пользоваться сайтом — Семейный архив", "description": "Как устроен семейный архив и как дописать в него то, что вы знаете.", "inLanguage": "ru"}</script>
+<link rel="alternate" hreflang="ru" href="https://vharseko.github.io/gene-site/help.html"><link rel="alternate" hreflang="en" href="https://vharseko.github.io/gene-site/en/help.html"><link rel="alternate" hreflang="x-default" href="https://vharseko.github.io/gene-site/help.html"><script src="languages.js" defer></script></head><body><header class="bar bar-static"><div class="brand"><a class="eyebrow brand-home" href="">Семейный архив</a></div><nav class="tabs" role="tablist"><a role="tab" class="tab" href="#/tree">Древо</a><a role="tab" class="tab" href="#/people">Люди</a><a role="tab" class="tab" href="#/places">Места</a><a role="tab" class="tab" href="#/sources">Архив</a></nav><div class="language-tools"><details class="more-menu language-nav"><summary aria-label="Язык сайта">Русский <span aria-hidden="true">▾</span></summary><nav class="more-list" aria-label="Язык сайта"><a data-site-lang="ru" lang="ru" hreflang="ru" class="on" aria-current="true" href="help.html">Русский</a><a data-site-lang="en" lang="en" hreflang="en" href="en/help.html">English</a></nav></details></div></header><main class="archive-page">
+<h1>Как пользоваться сайтом</h1><style>
+.help-lede { color: var(--muted); font-size: 18px; line-height: 1.6; max-width: 680px; }
+.tour { margin: 24px 0 8px; padding: 16px 20px 6px; background: var(--paper); border: 1px solid var(--line); border-radius: 14px; }
+.tour h2 { font-size: 20px; margin: 0 0 8px; }
+.tour-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 28px; margin: 0; }
+.tour-list div { display: grid; grid-template-columns: 130px minmax(0, 1fr); gap: 12px; padding: 9px 0; border-top: 1px solid var(--line); }
+.tour-list dt { font: 600 15px/1.4 var(--sans); margin: 0; }
+.tour-list dt a { color: var(--accent); text-decoration: none; }
+.tour-list dd { margin: 0; font-size: 15px; line-height: 1.5; color: var(--muted); }
+.help-toc { display: flex; flex-wrap: wrap; gap: 6px; margin: 22px 0 6px; padding: 0; list-style: none; font: 14px var(--sans); }
+.help-toc a { display: inline-block; border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; background: var(--paper); text-decoration: none; }
+.help-sec { padding: 22px 0 6px; border-top: 1px solid var(--line); scroll-margin-top: 70px; }
+.help-sec h2 { font-size: 25px; margin: 0 0 8px; }
+.help-sec h3 { font-size: 18px; margin: 20px 0 4px; }
+.help-feature { background: var(--paper); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px 8px; margin: 18px 0; }
+.help-feature .tag { display: inline-block; font: 600 11px/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.steps { list-style: none; counter-reset: s; padding: 0; }
+.steps li { counter-increment: s; position: relative; padding-left: 40px; min-height: 30px; }
+.steps li::before { content: counter(s); position: absolute; left: 0; top: 1px; width: 27px; height: 27px; border-radius: 50%; background: var(--accent); color: var(--accent-ink); font: 700 14px/27px var(--sans); text-align: center; }
+.help-note { background: var(--paper); border-left: 3px solid var(--accent); padding: 10px 14px; border-radius: 0 8px 8px 0; }
+.help-chip { display: inline-block; font: 600 13px/22px var(--sans); padding: 0 8px; border-radius: 11px; background: var(--chip); color: var(--accent); }
+kbd { font: 600 14px var(--sans); border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 4px; padding: 0 5px; background: var(--paper); }
+@media (max-width: 720px) { .tour-list { grid-template-columns: 1fr; } .tour-list div { grid-template-columns: 1fr; gap: 2px; } }
+</style>
+<p class="help-lede">Здесь собрано всё, что семья знает о своих предках: древо, рассказ, карта, документы и старые фотографии. Сломать ничего нельзя, нажимайте смело. А если что-то помните — напишите: ради этого сайт и сделан.</p>
+
+<section class="tour" aria-label="Разделы сайта">
+<h2>Что где лежит</h2>
+<dl class="tour-list">
+<div><dt><a href="./#/tree">Древо</a></dt><dd>Кто кому кем приходится. Нажмите на человека — откроется всё, что о нём известно.</dd></div>
+<div><dt><a href="./#/people">Люди</a></dt><dd>Список всех, кто есть в древе, календарь дней рождения и памяти, страницы фамилий.</dd></div>
+<div><dt><a href="./#/places">Места</a></dt><dd>Карта сёл и городов, где жила семья, и переезды между ними.</dd></div>
+<div><dt><a href="./#/sources">Архив</a></dt><dd>Документы и фотографии, на которых построено древо, источники поиска и журнал исправлений.</dd></div>
+<div><dt><a href="./#/story">История</a></dt><dd>Связный рассказ о семье, если его уже написали.</dd></div>
+<div><dt><a href="./#/questions">Вопросы и обсуждение</a></dt><dd>Что мы пока не знаем — и комментарии родных.</dd></div>
+</dl>
+</section>
+
+<ul class="help-toc" aria-label="Содержание">
+<li><a href="#tree">Древо</a></li>
+<li><a href="#card">Карточка человека</a></li>
+<li><a href="#kin">Как мы связаны</a></li>
+<li><a href="#search">Поиск</a></li>
+<li><a href="#write">Как дописать или исправить</a></li>
+<li><a href="#archive">Архив</a></li>
+<li><a href="#places">Места и история</a></li>
+<li><a href="#signs">Значки</a></li>
+<li><a href="#share">Ссылки и язык</a></li>
+<li><a href="#phone">На телефоне</a></li>
+<li><a href="#privacy">Ныне живущие</a></li>
+<li><a href="#trouble">Если что-то не работает</a></li>
+</ul>
+
+<section class="help-sec" id="tree">
+<h2>Древо</h2>
+<p>В середине древа стоит один человек — его карточка обведена рамкой. Над ним родители и предки, под ним дети, рядом братья, сёстры и супруги.</p>
+<ul>
+<li><b>Нажмите на карточку</b> — справа откроется всё, что о человеке известно, а сам он останется виден в древе.</li>
+<li><b>Чтобы перейти к другой ветви,</b> откройте карточку и нажмите «Поставить в центр древа». Надпись «+3 родственника» значит, что у человека есть родные, которых сейчас не видно.</li>
+<li><b>Двигать</b> древо можно мышью или пальцем, <b>увеличивать</b> — кнопками + и −, щипком или колесом мыши с <kbd>Ctrl</kbd>. «Вписать» покажет всё целиком.</li>
+<li><b>Слева — ветви и фамилии:</b> нажмите на фамилию, и древо покажет её ветвь.</li>
+<li><b>«Горизонтально»</b> разворачивает древо боком — удобно на широком экране.</li>
+</ul>
+<p class="help-note">Всё древо на одной большой схеме — вкладка «Архив», кнопка «Всё древо на одной схеме». Её можно сохранить картинкой.</p>
+</section>
+
+<section class="help-sec" id="card">
+<h2>Карточка человека</h2>
+<p>В карточке собрано всё, что известно о человеке: кем он приходится, даты и места рождения, брака и смерти, где жил, родные, связный рассказ, фотографии, документы и комментарии родственников.</p>
+<p>У каждой даты видно, откуда она известна: из документа, со слов семьи, по возрасту в другом документе. Номер вроде <span class="help-chip">S12</span> — ссылка на документ: нажмите, и он откроется вместе с расшифровкой. Имя родственника переносит к его карточке. Закрыть карточку можно крестиком или клавишей <kbd>Esc</kbd>.</p>
+</section>
+
+<section class="help-sec" id="kin">
+<h2>Как мы связаны</h2>
+<p>В карточке любого человека есть блок «Как мы связаны». Он сразу показывает, кем человек приходится главному человеку древа, а в поле «Кем приходится для» можно выбрать любого другого — например, себя.</p>
+<p>Сайт назовёт родство точно — «троюродный дядя», «двоюродная бабушка», «единокровный брат», муж или жена родственника — и покажет цепочку людей между вами. Каждое имя в цепочке открывает карточку. Если одно из звеньев не доказано документом, сайт так и напишет: «вероятно».</p>
+</section>
+
+<section class="help-sec" id="search">
+<h2>Поиск</h2>
+<ul>
+<li><b>Лупа вверху:</b> начните набирать имя, название села или слово из документа — найдутся люди, документы (по расшифровкам), места, главы «Истории», наводки и вопросы. Падежи, старое написание (ъ, і, ѣ) и латиница не мешают: «Сынкове» найдёт Сынково, «Kolodin» — Колодина.</li>
+<li><b>Вкладка «Люди»:</b> полный список с поиском по имени, родству и годам; «Календарь» дней рождения и памяти; «Фамилии» — отдельная страница на каждую фамилию.</li>
+<li><b>«Указатель людей»</b> в меню «Ещё» — страница на каждого человека; по ней родственника можно найти и через поисковик.</li>
+</ul>
+</section>
+
+<section class="help-sec help-feature" id="write">
+<span class="tag">Самое важное</span>
+<h2>Как дописать или исправить</h2>
+<p>Мы многого не знаем, а вы можете помнить: имена, даты, где жили, кем работали, кто на старой фотографии. Годится и приблизительное («кажется, в конце 50-х»): мы отметим, что это воспоминание, а не документ.</p>
+<ol class="steps">
+<li>Откройте карточку человека или документа — через древо, поиск или архив.</li>
+<li>Нажмите «Добавить сведения» или прокрутите до «Комментарии и уточнения».</li>
+<li>Напишите своё имя так, чтобы было понятно, кто вы («тётя Анна»). Сайт его запомнит.</li>
+<li>Напишите, что знаете, и нажмите «Отправить».</li>
+</ol>
+<h3>Предложить исправление</h3>
+<p>Если неверна дата или место, нажмите в карточке «Предложить исправление»: выберите, что исправить, напишите, как правильно и откуда это известно. Составитель архива увидит предложение и внесёт его в древо.</p>
+<h3>Ответить на наши вопросы</h3>
+<p>Во вкладке «Вопросы и обсуждение» — что семья пока не знает. Кнопка «Ответить» сразу привяжет ответ к нужному человеку.</p>
+<p class="help-note">Комментарии и предложения работают, когда сайт запущен с сервером. Если полей для комментариев нет — напишите составителю архива: адрес обычно есть в шапке сайта.</p>
+</section>
+
+<section class="help-sec" id="archive">
+<h2>Архив</h2>
+<h3>Документы и фотографии</h3>
+<p>Всё, на чём построено древо: метрики, свидетельства, письма, газеты, рукописи и семейные снимки. Поиск ищет по имени, месту, году или слову из описания; кнопки «Вид» и «Род» отбирают, например, только фотографии или только одну ветвь. Если у снимка есть оборот, в просмотре появится кнопка «Оборот». Ниже — «Журнал поиска»: где искали и что нашли.</p>
+<h3>Отреставрированные фото</h3>
+<p>Старые снимки без заломов и пятен — в чёрно-белом варианте и раскрашенные, рядом с оригиналом. Цвета в раскрашенных — догадка реставратора, документом остаётся оригинал.</p>
+<h3>Источники</h3>
+<p>Все архивы, базы и сайты, где искали сведения о семье: что это за источник, что там нашлось, какие документы и записи журнала поиска к нему относятся. У метрических книг — таблица «год × часть»: что прочитано полностью, что до какой записи, чего нет на плёнке.</p>
+<h3>Журнал исправлений</h3>
+<p>Каждое изменение в древе: что было записано раньше, что стало, почему и на каком документе это основано.</p>
+<p>На странице архива можно скачать всё древо файлом GEDCOM — его открывают MyHeritage, Gramps, Ancestry и другие программы для родословных.</p>
+<h3>Архив в цифрах</h3>
+<p>Сколько собрано людей, документов и мест, откуда документы, чем подтверждены люди, сколько открытых вопросов и исправлений в каждом роду, рождения по векам и журнал поиска по времени. Ссылка — в меню «Ещё».</p>
+</section>
+
+<section class="help-sec" id="places">
+<h2>Места и история</h2>
+<p><b>Места</b> — где жила семья. У каждого места своя страница: что там было, кто из семьи там родился, жил или похоронен (по поколениям), по каким документам это известно, как место называлось тогда и называется сейчас, в книгах какой церкви искать метрики, и маленькая карта. На странице «Места» — дороги ветвей семьи: места по годам с пронумерованными остановками на карте ветви. Все места сразу — по ссылке «Все места на одной карте».</p>
+<p><b>История</b> — связный рассказ о семье. Его можно читать подряд, как книгу, переходить по ленте лет или выбрать место — в тексте подсветятся все отрывки о нём.</p>
+</section>
+
+<section class="help-sec" id="signs">
+<h2>Значки</h2>
+<ul>
+<li><b>Карточка с рамкой</b> — человек в центре древа.</li>
+<li><b>Пунктир и знак ≈</b> — вероятная связь: так мы думаем, но документа пока нет.</li>
+<li><b>Пустая карточка «+ подсказать»</b> — здесь должен быть человек, которого мы не знаем. Нажмите и напишите, если знаете, кто это.</li>
+<li><b>S1, S2…</b> — документы архива; <b>L1, L2…</b> — наводки: что-то нашлось, но ещё не проверено.</li>
+</ul>
+</section>
+
+<section class="help-sec" id="share">
+<h2>Ссылки и язык</h2>
+<ul>
+<li><b>«Поделиться»</b> в карточке человека, документа или в шапке сайта копирует ссылку. В Telegram, WhatsApp и других мессенджерах она покажется с фотографией, именем и описанием, а по нажатию откроет то же место сайта.</li>
+<li><b>Адрес в браузере</b> меняется вместе с тем, что открыто, — его тоже можно скопировать и отправить.</li>
+<li><b>Язык</b> переключается в шапке. Имена и документы остаются в оригинале.</li>
+<li><b>«Ещё»:</b> «Что нового», эта страница, «Указатель людей» и другие страницы сайта.</li>
+</ul>
+</section>
+
+<section class="help-sec" id="phone">
+<h2>На телефоне</h2>
+<ul>
+<li>Вкладки вверху прокручиваются вбок — их больше, чем помещается на экране.</li>
+<li>Древо двигается одним пальцем, увеличивается щипком.</li>
+<li>Карточка открывается снизу поверх древа. Закрыть — крестиком или нажатием на затемнённую часть экрана.</li>
+<li>«Поделиться» на телефоне открывает обычное меню телефона: сразу в мессенджер.</li>
+</ul>
+</section>
+
+<section class="help-sec" id="privacy">
+<h2>Ныне живущие</h2>
+<p>О живых людях сайт показывает только имя и родство: без дат, мест, документов и фотографий — ни на страницах, ни в файле данных, ни в выгрузке GEDCOM. Их страницы не показываются поисковикам. Если вы хотите, чтобы о вас написали больше — или меньше, — скажите составителю архива.</p>
+</section>
+
+<section class="help-sec" id="trouble">
+<h2>Если что-то не работает</h2>
+<p>Обновите страницу, а если не помогло — с очисткой кэша (на компьютере <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>, на Mac <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd>). Если и это не помогло, напишите составителю архива, что вы нажали и что увидели; лучше всего приложить снимок экрана.</p>
+<p><a href="./">← На главную</a></p>
+</section>
+</main></body></html>

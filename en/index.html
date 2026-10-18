@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Family archive</title>
+<meta name="description" content="">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%238a4b2a%27/%3E%3Cpath d=%27M16 7v18M16 13l-6-4M16 13l6-4M16 19l-7-3M16 19l7-3%27 stroke=%27%23fff%27 stroke-width=%272.4%27 stroke-linecap=%27round%27 fill=%27none%27/%3E%3C/svg%3E">
+<script>
+window.GENE_ROOT = "../";
+window.genePrefetch = { data: fetch('data.json', { credentials: 'same-origin' }) };
+</script>
+<link rel="stylesheet" href="../app.css?v=c823728439">
+<link rel="stylesheet" href="../vendor/leaflet/leaflet.css">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website"><meta property="og:title" content="Family archive"><meta property="og:description" content=""><meta property="og:site_name" content="Family archive">
+<link rel="canonical" href="https://vharseko.github.io/gene-site/en/"><meta property="og:url" content="https://vharseko.github.io/gene-site/en/">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "url": "https://vharseko.github.io/gene-site/en/", "name": "Family archive", "description": "", "inLanguage": "en"}</script>
+<link rel="alternate" hreflang="ru" href="https://vharseko.github.io/gene-site/"><link rel="alternate" hreflang="en" href="https://vharseko.github.io/gene-site/en/"><link rel="alternate" hreflang="x-default" href="https://vharseko.github.io/gene-site/"><script src="../languages.js" defer></script></head>
+<body class="tree-mode">
+<a class="skip" href="#main-content">Back to contents</a>
+<header class="bar">
+  <div class="brand">
+    <a class="eyebrow brand-home" href="#/tree">Family archive</a>
+  </div>
+  <div class="search">
+    <button id="search-toggle" class="search-toggle" type="button" aria-label="Search the archive" title="Search the archive" aria-expanded="false" aria-controls="search-panel">
+      <svg viewbox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 4.5 4.5"></path></svg>
+    </button><div class="language-tools"><details class="more-menu language-nav"><summary aria-label="Site language">English <span aria-hidden="true">▾</span></summary><nav class="more-list" aria-label="Site language"><a data-site-lang="ru" lang="ru" hreflang="ru" href="../">Русский</a><a data-site-lang="en" lang="en" hreflang="en" class="on" aria-current="true" href="../en/">English</a></nav></details></div>
+    <div id="search-panel" class="search-panel" hidden>
+      <input id="search" type="search" placeholder="Name, village, a word from a document…" aria-label="Search the archive" autocomplete="off">
+      <ul id="search-results" class="search-results" hidden></ul>
+    </div>
+    <button class="mail-link share-btn" id="share-btn" type="button" title="Share a link to what is open" aria-label="Share a link to what is open">
+      <svg viewbox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"></path><path d="m7.5 7.5 4.5-4.5 4.5 4.5"></path><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"></path></svg>
+      <span class="share-label">Share</span>
+    </button>
+    <details class="more-menu" id="more-menu">
+      <summary aria-label="More sections">More <span aria-hidden="true">▾</span></summary>
+      <nav class="more-list" aria-label="More sections">
+        <a href="help.html">How to use this site</a>
+        <a href="#/stats" data-view-link="stats">Archive in numbers</a>
+        <a href="people/">People index</a>
+        <a href="places/">Index of places</a>
+        <a class="more-engine" href="https://github.com/igormel81/gene_archive" rel="noopener">gene-archive</a>
+      </nav>
+    </details>
+  </div>
+  <nav class="tabs" role="tablist">
+    <button role="tab" data-view="tree" aria-selected="true">Tree</button>
+    <button role="tab" data-view="people">People</button>
+    <button role="tab" data-view="places">Places</button>
+    <button role="tab" data-view="sources">Archive</button>
+    
+    <button role="tab" data-view="questions">Questions and discussion <span class="pill" id="c-count"></span></button>
+  </nav>
+</header>
+
+<main id="main-content" tabindex="-1">
+  <section id="view-tree" class="view active">
+    <aside class="tree-side" aria-label="Branches and surnames">
+      <div class="tree-side-bar">
+        <button class="btn branches-toggle" id="branches-toggle" type="button" aria-expanded="false" aria-controls="branches">Branches and surnames ▾</button>
+        <button class="btn orient" id="orient" type="button"><svg class="orient-ic" viewbox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M8 8l-4 4 4 4M16 8l4 4-4 4"></path></svg><span>Horizontal</span></button>
+      </div>
+      <div class="branches" id="branches"></div>
+    </aside>
+    <div class="tree-main">
+    <div class="canvas" id="canvas">
+      <div class="zoom overlay">
+        <button id="zoom-out" aria-label="Zoom out">−</button>
+        <button id="zoom-in" aria-label="Zoom in">+</button>
+        <button id="zoom-fit">Fit</button>
+        <button id="zoom-save" class="zoom-save" type="button" aria-label="Save the tree as an image" title="Save the tree as an image"><svg viewbox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 19h14"></path></svg></button>
+      </div>
+      <p class="tree-loading">Loading the tree…</p>
+      <div class="stage" id="stage">
+        <svg class="links" id="links"></svg>
+        <div id="cards"></div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <section id="view-wide" class="view">
+    <div class="tree-tools">
+      <button class="btn" id="wide-back" type="button">← Archive</button>
+      <div class="wide-note">All branches at once: younger generations to the left, older to the right. Click a person to open their card.</div>
+    </div>
+    <div class="canvas wide-canvas" id="wide-canvas">
+      <div class="zoom overlay">
+        <button id="wide-out" aria-label="Zoom out">−</button>
+        <button id="wide-in" aria-label="Zoom in">+</button>
+        <button id="wide-fit">Fit</button>
+        <button id="wide-full">⛶ Full screen</button>
+      </div>
+      <div class="stage" id="wide-stage">
+        <svg class="links" id="wide-links"></svg>
+        <div id="wide-cards"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="view-story" class="view">
+    <div class="page story">
+      <h2>Family history</h2>
+      <div id="story"><p class="sub">Loading…</p></div>
+    </div>
+  </section>
+
+  <section id="view-people" class="view">
+    <div class="page">
+      <h2>All people</h2>
+      <p class="sub" id="people-sub"></p>
+      <div class="people-modes" role="group" aria-label="People view">
+        <button class="btn" data-people-mode="list" aria-pressed="true">List</button>
+        <button class="btn" data-people-mode="bios" aria-pressed="false">Biographies</button>
+        <button class="btn" data-people-mode="surnames" aria-pressed="false">Surnames</button>
+        <button class="btn" data-people-mode="calendar" aria-pressed="false">Calendar</button>
+        <button class="btn" data-people-mode="zodiac" aria-pressed="false">Zodiac</button>
+      </div>
+      <input id="people-filter" class="filter" type="search" placeholder="Filter by name, relationship, year…" aria-label="Filter">
+      <div id="people-list" class="plist"></div>
+      <div id="people-surnames" class="fam-grid" hidden></div>
+      <div id="people-bios" class="bios story" hidden></div>
+      <section id="people-calendar" class="family-calendar" hidden aria-label="Calendar of birthdays and death dates">
+        <div class="calendar-toolbar">
+          <h3 id="calendar-title" aria-live="polite"></h3>
+          <div class="calendar-navigation">
+            <button class="btn" id="calendar-prev" aria-label="Previous month">←</button>
+            <select id="calendar-month" aria-label="Choose a month"></select>
+            <button class="btn" id="calendar-next" aria-label="Next month">→</button>
+            <button class="btn" id="calendar-today">Current month</button>
+          </div>
+        </div>
+        <div id="calendar-upcoming" class="calendar-upcoming" aria-label="Upcoming family dates"></div>
+        <div class="calendar-types" role="group" aria-label="Family date type">
+          <button class="btn" data-calendar-kind="all" aria-pressed="true">All dates</button>
+          <button class="btn" data-calendar-kind="birth" aria-pressed="false"><span class="calendar-mark birth" aria-hidden="true"></span>Birthdays</button>
+          <button class="btn" data-calendar-kind="death" aria-pressed="false"><span class="calendar-mark death" aria-hidden="true"></span>Death dates</button>
+        </div>
+        <div class="calendar-layout">
+          <div class="calendar-month-grid">
+            <div class="calendar-weekdays" aria-hidden="true"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div>
+            <div id="calendar-days" class="calendar-days" role="group" aria-labelledby="calendar-title"></div>
+            <button class="btn calendar-leap" id="calendar-leap" hidden>29 February — a leap-year date</button>
+          </div>
+          <div class="calendar-agenda">
+            <div class="calendar-agenda-heading">
+              <h3 id="calendar-agenda-title"></h3>
+              <button class="btn" id="calendar-all-days" hidden>All dates this month</button>
+            </div>
+            <p class="calendar-note" id="calendar-summary" role="status"></p>
+            <div id="calendar-events"></div>
+          </div>
+        </div>
+        <p class="calendar-note calendar-foot">The calendar includes dates with a known day and month. Alternative dates from different sources are marked; the calendar system is preserved as recorded.</p>
+      </section>
+      <section id="people-zodiac" class="family-zodiac" hidden aria-labelledby="zodiac-title">
+        <h3 id="zodiac-title">Family zodiac distribution</h3>
+        <p class="zodiac-intro">Select a sector or sign to see people. Shares are calculated among people with a known sign.</p>
+        <div class="zodiac-layout">
+          <div class="zodiac-visual">
+            <div class="zodiac-wheel">
+              <svg id="zodiac-chart" viewbox="0 0 400 400" role="group" aria-label="Family by zodiac sign"></svg>
+              <div class="zodiac-center" aria-hidden="true">
+                <strong id="zodiac-center-count"></strong>
+                <span id="zodiac-center-label"></span>
+              </div>
+            </div>
+            <p id="zodiac-coverage" class="zodiac-coverage" role="status"></p>
+            <div id="zodiac-elements" class="zodiac-elements" role="group" aria-label="Zodiac elements"></div>
+          </div>
+          <div id="zodiac-signs" class="zodiac-signs" role="group" aria-label="Zodiac signs"></div>
+        </div>
+        <div id="zodiac-missing" class="zodiac-missing" role="group" aria-label="Dates to clarify"></div>
+        <p class="zodiac-note">The calendar boundaries of the Western zodiac are used. Each person is counted once; conflicting birth dates that yield different signs require clarification. People without an established family connection are excluded.</p>
+        <div class="zodiac-details" id="zodiac-details" hidden>
+          <div class="zodiac-details-heading">
+            <h3 id="zodiac-details-title"></h3>
+            <button class="btn" id="zodiac-reset" hidden>All signs</button>
+          </div>
+          <p id="zodiac-selection-summary" class="zodiac-note" role="status"></p>
+          <div id="zodiac-people" class="zodiac-people"></div>
+          <button class="btn" id="zodiac-more" hidden>Show more</button>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <section id="view-questions" class="view">
+    <div class="page qa">
+      <h2>Questions and discussion</h2>
+      <p class="sub">Here relatives ask and answer questions and share memories and corrections. An answer about a person also appears in their card.</p>
+      <nav class="subnav" id="qa-nav">
+        <button data-go="qa-talk">Discussion <span class="pill" id="c-count2"></span></button>
+        <button data-go="qa-questions">Questions for the family <span class="pill" id="q-count"></span></button>
+        <button data-go="qa-leads">Leads and research directions</button>
+      </nav>
+      <section id="qa-talk">
+        <div class="general-form" id="general-form"></div>
+        <h3>Latest comments</h3>
+        <div id="feed" class="feed"></div>
+      </section>
+      <section id="qa-questions">
+        <h3>Questions for the family</h3>
+        <p class="sub">We don't know this yet. If you remember at least something, even approximately, answer right here.</p>
+        <div id="questions" class="cards"></div>
+      </section>
+      <section id="qa-leads">
+        <h3>Leads and research directions</h3>
+        <p class="sub">Matches and archived addresses that have not yet been confirmed. They are not included in the tree.</p>
+        <div id="leads" class="cards"></div>
+      </section>
+    </div>
+  </section>
+
+  <section id="view-places" class="view">
+    <div class="page routes" id="places-home">
+      <header class="routes-head">
+        <h2>Places</h2>
+        <p class="sub">Where our relatives lived, studied, served and are buried. Every place has its own page: its story, the people by generation, documents and a map. Below are the roads of the family's branches: places in order of years, with numbered stops on the map.</p>
+        <p class="routes-links"><a class="btn" href="#/places?mode=map">All places on one map</a></p>
+        <div id="place-filters" class="route-filters" role="group" aria-label="Select family branch"></div>
+        <details class="place-index" id="place-index-box"><summary>Index of places <span class="pill" id="place-index-count"></span></summary><div id="place-index" class="place-index-list"></div></details>
+      </header>
+      <div id="places"></div>
+      <section class="place-unmatched" aria-labelledby="place-unmatched-title"><h3 id="place-unmatched-title">Locations to verify</h3><p class="sub">These places are mentioned in records, but their precise modern locations have not yet been verified.</p><div id="place-suggestions"></div></section>
+    </div>
+    <div class="page routes places-map-page" id="places-map-page" hidden>
+      <nav class="place-crumbs"><a href="#/places">← All places</a></nav>
+      <h2>All places on one map</h2>
+      <p class="sub">Every place of every branch of the family. Dotted lines are the moves named in the sources, drawn straight between the places. Tap a point to open the page of the place.</p>
+      <div id="place-map" class="route-map all-map" role="region" aria-label="Map of family places"></div>
+      <p class="route-map-note">Points are villages and towns, sometimes landmarks. Places without checked coordinates are in the index of places.</p>
+    </div>
+    <article class="page place-page" id="place-page" hidden aria-labelledby="place-title"></article>
+  </section>
+
+  <section id="view-stats" class="view">
+    <div class="page stats">
+      <h2>Archive in numbers</h2>
+      <p class="sub">How much has been gathered, where the documents come from and what the tree rests on. The numbers are recounted every time the site is built.</p>
+      <div id="stats"></div>
+    </div>
+  </section>
+
+  <section id="view-sources" class="view">
+    <div class="page archive">
+      <h2>Family archive</h2>
+      <p class="sub">All documents, photographs, manuscripts and references on which the tree is based. Click on a card to open the document, read the description, and see who it applies to. <a href="../family_tree.ged" download>Download the tree in GEDCOM format</a> — for MyHeritage, Gramps and other programs. <a href="#/stats">Archive in numbers</a> — how much has been gathered and from where.</p>
+      <div class="arch-tabs" role="tablist" aria-label="Archive sections"><button type="button" role="tab" data-mode="docs" aria-selected="true">Documents and photographs</button><button type="button" role="tab" data-mode="restored" aria-selected="false" id="arch-tab-restored" hidden>Restored photos</button><button type="button" role="tab" data-mode="corrections" aria-selected="false" id="arch-tab-corrections">Corrections log</button><button type="button" role="tab" data-mode="research" aria-selected="false" id="arch-tab-research" hidden>Sources</button></div>
+      <div id="arch-docs">
+      <div class="arch-tools">
+        <input id="arch-q" class="filter" type="search" placeholder="Archive search: name, place, year, word from a document..." aria-label="Search the archive">
+        <details class="arch-filters" id="arch-filters" open>
+          <summary class="btn">Filters</summary>
+          <div class="arch-row"><span class="arch-lbl">Type</span><div class="pl-chips" id="arch-kind"></div></div>
+          <div class="arch-row"><span class="arch-lbl">Line</span><div class="pl-chips" id="arch-line"></div></div>
+          <div class="arch-row" id="arch-verify-row" hidden><span class="arch-lbl">Check</span><div class="pl-chips" id="arch-verify"></div></div>
+          <div class="arch-row"><span class="arch-lbl">Order</span><div class="pl-chips" id="arch-sort"></div></div>
+        </details>
+        <span class="arch-count" id="arch-count"></span>
+      </div>
+      <button class="arch-wide" id="open-wide" type="button">
+        <span class="arch-wide-t">The whole tree on one diagram</span>
+        <span class="arch-wide-s">All branches and generations at once: to the left are the younger ones, to the right are the older ones. Can be expanded to full screen.</span>
+      </button>
+      <div id="sources" class="arch-grid"></div>
+      <h3>Research log</h3>
+      <p class="sub">What was searched, where, and with what result — so that nobody repeats it.</p>
+      <div id="research-log" class="rlog"></div>
+      </div>
+      <section class="arch-corrections" id="arch-corrections" hidden>
+        <h3>Corrections log</h3>
+        <p class="sub">Every change to the tree: what was recorded before, what it is now, why, and which document it rests on. Newest changes first. A name opens the person's card, a number opens the document.</p>
+        <div class="tblwrap"><table id="corrections"><thead><tr><th>Record</th><th>Field</th><th>Before</th><th>After</th><th>Why</th></tr></thead><tbody></tbody></table></div>
+      </section>
+      <section class="arch-research" id="arch-research" hidden>
+        <h3>Where we search</h3>
+        <p class="sub">Every archive, database, library and website where we have looked for the family: what the source is, how to work with it and what we found there. A number opens the document; “Search log” lists every search in that source, successful or not.</p>
+        <nav class="res-toc" id="res-toc" aria-label="Source groups"></nav>
+        <div id="research-resources"></div>
+      </section>
+      <section class="arch-restored" id="arch-restored" hidden>
+        <div class="rest-head"><h3>Restored photographs</h3><div class="rest-switch rest-sort" id="rest-sort" role="group" aria-label="Order"><button type="button" data-s="year" aria-pressed="true">By date</button><button type="button" data-s="line" aria-pressed="false">By surname</button></div><div class="rest-switch rest-all" id="rest-all" role="group" aria-label="All photos"><button type="button" data-v="color" aria-pressed="true">Colour</button><button type="button" data-v="bw" aria-pressed="false">B/W</button><button type="button" data-v="orig" aria-pressed="false">Original</button></div></div>
+        <p class="sub">Copies of old family photos with the creases and stains removed — in black and white and colourised. The colours are the restorer’s guess; the original remains the document, and you can open it by its number.</p>
+        <div class="restored-grid" id="restored-grid"></div>
+      </section>
+    </div>
+  </section>
+<aside class="panel" id="panel" aria-hidden="true">
+  <button class="panel-close" id="panel-close" aria-label="Close">×</button>
+  <div id="panel-body"></div>
+</aside>
+<div class="scrim" id="scrim" hidden></div>
+
+<div class="doc" id="doc" hidden role="dialog" aria-modal="true" aria-labelledby="doc-title">
+  <div class="doc-inner">
+    <button class="panel-close" id="doc-close" aria-label="Close">×</button>
+    <div class="doc-view" id="doc-view"></div>
+    <div class="doc-meta" id="doc-meta"></div>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox" hidden>
+  <button class="panel-close" id="lightbox-close" aria-label="Close">×</button>
+  <img id="lightbox-img" alt="">
+  <p id="lightbox-cap"></p>
+</div>
+
+<script src="../i18n/en.js?v=ce25ad4db6"></script>
+<script src="../vendor/leaflet/leaflet.js"></script>
+<script src="../app.js?v=299edf8d2e"></script>
+</body>
+</html>
