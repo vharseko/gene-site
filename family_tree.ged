@@ -595,6 +595,12 @@
 1 SEX F
 1 FAMS @F10@
 1 NOTE Relation: мать двоюродного брата
+0 @I47@ INDI
+1 NAME Матвей Александрович /Курныш/
+2 GIVN Матвей Александрович
+2 SURN Курныш
+1 SEX M
+1 NOTE Relation: племянник
 0 @F1@ FAM
 1 HUSB @I2@
 1 WIFE @I3@
